@@ -1,53 +1,148 @@
-# React + TypeScript + Vite
+# Ritish Neupane - Cyberpunk Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visually striking, interactive portfolio website featuring a cyberpunk/glitch aesthetic with animated fragments and a glassmorphism background.
 
-Currently, two official plugins are available:
+## 🎨 Design Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Cyberpunk Aesthetic**: Dark themes with neon accents and glitch effects
+- **Animated Fragments**: Floating SVG fragments that create dynamic visual interest
+- **Glassmorphism Background**: Animated gradient background with glass-like transparency effects
+- **Glitch Text Effects**: Advanced CSS animations for the main title
+- **Page Snapping**: Smooth section transitions with scroll-snap functionality
+- **Responsive Design**: Optimized for all screen sizes
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 18** - Modern React with hooks and functional components
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Smooth animations and transitions
+- **Custom Fonts** - Acumin Variable Concept for typography
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd "Portfolio website"
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
+```bash
+npm install
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Start the development server:
+```bash
+npm run dev
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
+4. Open your browser and visit `http://localhost:5173`
+
+## 📁 Project Structure
+
+```
+src/
+├── assets/
+│   ├── fonts/           # Acumin Variable Concept font files
+│   └── images/
+│       ├── fragments/   # SVG fragment files for animations
+│       ├── dots.svg     # Background dots pattern
+│       ├── logo-main.svg # Main logo
+│       └── logo-main.png # Main logo (PNG fallback)
+├── components/
+│   ├── HeroSection.tsx  # Main hero section with animations
+│   └── layout/
+│       ├── AnimatedNavigation.tsx # Scroll-triggered navigation
+│       └── Layout.tsx   # Main layout wrapper
+├── pages/
+│   └── HomePage.tsx     # Main page with snap sections
+└── index.css           # Global styles and animations
+```
+
+## 🎯 Key Components
+
+### HeroSection
+- Floating fragment animations
+- Glassmorphism background effects
+- Glitch text animations
+- Interactive navigation menu
+
+### AnimatedNavigation
+- Scroll-triggered top navigation bar
+- Smooth transitions between states
+
+### Page Snapping
+- Automatic section snapping
+- Keyboard navigation support
+- Smooth scroll behavior
+
+## 🎨 Customization
+
+### Colors
+The cyberpunk color palette is defined in `tailwind.config.js`:
+- Primary: Various shades of blue/cyan
+- Secondary: Accent colors for highlights
+- Custom gradients and effects
+
+### Animations
+All custom animations are defined in `src/index.css`:
+- Glitch effects
+- Fragment floating animations
+- Background gradient movements
+
+### Fonts
+The project uses Acumin Variable Concept font:
+- Font files are located in `src/assets/fonts/`
+- Configured in `src/index.css` with @font-face
+
+## 📱 Features
+
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Performance Optimized**: Efficient animations and image loading
+- **Accessibility**: Proper semantic markup and keyboard navigation
+- **SEO Ready**: Meta tags and structured content
+
+## 🚀 Deployment
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Preview Production Build
+```bash
+npm run preview
+```
+
+## 🔧 Development Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 📄 License
+
+This project is private and proprietary.
+
+## 👨‍💻 Author
+
+**Ritish Neupane**
+- Portfolio: [Your Portfolio URL]
+- Email: [Your Email]
+- LinkedIn: [Your LinkedIn]
+
+---
+
+Built with ❤️ using React, TypeScript, and modern web technologies.
     ...reactDom.configs.recommended.rules,
   },
 })
