@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* Import Acumin Variable Concept font - place your font files in src/assets/fonts/ */
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('./assets/fonts/AcuminVariableConcept.woff2') format('woff2'),
+       url('./assets/fonts/AcuminVariableConcept.woff') format('woff');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +21,17 @@
     @apply bg-gray-50 text-gray-900 font-sans antialiased;
     margin: 0;
     min-height: 100vh;
+  }
+  
+  /* Page snapping styles */
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  
+  /* Smooth scrolling container */
+  html {
+    scroll-snap-type: y mandatory;
   }
   
   /* Custom scrollbar styles */
@@ -48,5 +68,130 @@
   
   .text-gradient {
     @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+  }
+
+  /* Enhanced Cyberpunk/Glitch specific styles */
+  .hero-title {
+    font-family: 'Acumin Variable Concept', 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: #000;
+    text-shadow: 0 0 20px rgba(0,255,255,0.3);
+  }
+  
+  .glitch-text {
+    position: relative;
+    color: #000;
+    font-family: 'Acumin Variable Concept', 'Inter', sans-serif;
+    animation: glitch-main 2s infinite;
+  }
+  
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  
+  .glitch-text::before {
+    animation: glitch-1 0.8s infinite;
+    color: #ff0040;
+    z-index: -1;
+    text-shadow: 2px 0 #ff0040;
+  }
+  
+  .glitch-text::after {
+    animation: glitch-2 0.8s infinite;
+    color: #00ffff;
+    z-index: -2;
+    text-shadow: -2px 0 #00ffff;
+  }
+  
+  .fragment-red {
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  
+  .fragment-blue {
+    filter: hue-rotate(240deg) saturate(1.5);
+  }
+  
+  .fragment-cyan {
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  
+  .hero-nav-item {
+    font-family: 'Acumin Variable Concept', 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #000;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  
+  .hero-nav-item:hover {
+    color: #00ffff;
+  }
+  
+  .hero-nav-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: #ff0000;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .hero-nav-item.active::before {
+    opacity: 1;
+  }
+
+  @keyframes glitch-main {
+    0%, 100% { transform: translate(0); }
+    10% { transform: translate(-1px, 1px) skew(0.5deg); }
+    20% { transform: translate(1px, 0px) skew(-0.2deg); }
+    30% { transform: translate(0px, -1px) skew(0.3deg); }
+    40% { transform: translate(-1px, 0px) skew(-0.1deg); }
+    50% { transform: translate(1px, 1px) skew(0.4deg); }
+    60% { transform: translate(0px, 0px) skew(0deg); }
+    70% { transform: translate(-1px, -1px) skew(-0.3deg); }
+    80% { transform: translate(1px, -1px) skew(0.2deg); }
+    90% { transform: translate(0px, 1px) skew(-0.4deg); }
+  }
+
+  @keyframes glitch-1 {
+    0%, 100% { transform: translate(0); clip-path: inset(0 0 0 0); }
+    10% { transform: translate(-3px, 2px); clip-path: inset(10px 0 80px 0); }
+    20% { transform: translate(-2px, -2px); clip-path: inset(20px 0 60px 0); }
+    30% { transform: translate(2px, 2px); clip-path: inset(40px 0 40px 0); }
+    40% { transform: translate(-2px, 0px); clip-path: inset(60px 0 20px 0); }
+    50% { transform: translate(3px, -1px); clip-path: inset(80px 0 10px 0); }
+    60% { transform: translate(0px, 2px); clip-path: inset(0 0 0 0); }
+    70% { transform: translate(-3px, -2px); clip-path: inset(15px 0 75px 0); }
+    80% { transform: translate(2px, -2px); clip-path: inset(25px 0 65px 0); }
+    90% { transform: translate(0px, 1px); clip-path: inset(35px 0 55px 0); }
+  }
+  
+  @keyframes glitch-2 {
+    0%, 100% { transform: translate(0); clip-path: inset(0 0 0 0); }
+    10% { transform: translate(2px, 2px); clip-path: inset(0 0 90px 0); }
+    20% { transform: translate(2px, -2px); clip-path: inset(5px 0 85px 0); }
+    30% { transform: translate(-2px, 2px); clip-path: inset(15px 0 75px 0); }
+    40% { transform: translate(2px, 0px); clip-path: inset(25px 0 65px 0); }
+    50% { transform: translate(-2px, -1px); clip-path: inset(35px 0 55px 0); }
+    60% { transform: translate(0px, 2px); clip-path: inset(45px 0 45px 0); }
+    70% { transform: translate(3px, -1px); clip-path: inset(55px 0 35px 0); }
+    80% { transform: translate(-2px, -2px); clip-path: inset(65px 0 25px 0); }
+    90% { transform: translate(0px, 1px); clip-path: inset(75px 0 15px 0); }
   }
 }

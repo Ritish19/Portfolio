@@ -33,10 +33,20 @@ export default {
           900: '#701a75',
           950: '#4a044e',
         },
+        // Cyberpunk colors
+        cyber: {
+          red: '#ff0000',
+          blue: '#0000ff',
+          cyan: '#00ffff',
+          black: '#000000',
+          white: '#ffffff',
+          gray: '#808080',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+        acumin: ['Acumin Variable Concept', 'Inter', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
