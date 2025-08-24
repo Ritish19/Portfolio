@@ -15,77 +15,31 @@ export const HomePage: React.FC = () => {
     }
   };
 
-  // Enhanced page snapping functionality
+  // Simple scroll tracking without automatic snapping
   useEffect(() => {
-    let scrollTimeout: NodeJS.Timeout;
-    let isScrolling = false;
-    
     const handleScroll = () => {
-      if (isScrolling) return;
+      // Just update current section for navigation highlighting
+      const sections = document.querySelectorAll('section[id], div[id]');
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
       
-      clearTimeout(scrollTimeout);
-      
-      scrollTimeout = setTimeout(() => {
-        const sections = document.querySelectorAll('.snap-section');
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = window.scrollY + rect.top;
+        const sectionBottom = sectionTop + rect.height;
         
-        let targetSection: Element | null = null;
-        let minDistance = Infinity;
-        
-        sections.forEach((section) => {
-          const rect = section.getBoundingClientRect();
-          const sectionTop = window.scrollY + rect.top;
-          const sectionCenter = sectionTop + rect.height / 2;
-          const distance = Math.abs(scrollPosition - sectionCenter);
-          
-          if (distance < minDistance) {
-            minDistance = distance;
-            targetSection = section;
+        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+          const sectionId = (section as HTMLElement).id;
+          if (sectionId && sectionId !== currentSection) {
+            setCurrentSection(sectionId);
           }
-        });
-        
-        if (targetSection && minDistance > window.innerHeight * 0.1) {
-          isScrolling = true;
-          const targetId = (targetSection as HTMLElement).id;
-          setCurrentSection(targetId);
-          (targetSection as HTMLElement).scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-          
-          setTimeout(() => {
-            isScrolling = false;
-          }, 1000);
         }
-      }, 100);
-    };
-
-    // Keyboard navigation
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-        e.preventDefault();
-        const sections = Array.from(document.querySelectorAll('.snap-section'));
-        const currentIndex = sections.findIndex(section => section.id === currentSection);
-        if (currentIndex < sections.length - 1) {
-          handleNavigate(sections[currentIndex + 1].id);
-        }
-      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-        e.preventDefault();
-        const sections = Array.from(document.querySelectorAll('.snap-section'));
-        const currentIndex = sections.findIndex(section => section.id === currentSection);
-        if (currentIndex > 0) {
-          handleNavigate(sections[currentIndex - 1].id);
-        }
-      }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('keydown', handleKeyPress);
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('keydown', handleKeyPress);
-      clearTimeout(scrollTimeout);
     };
   }, [currentSection]);
 
@@ -95,49 +49,12 @@ export const HomePage: React.FC = () => {
       <AnimatedNavigation />
       
       {/* Hero Section */}
-      <div id="home" className="snap-section">
+      <div id="home" className="relative">
         <HeroSection onNavigate={handleNavigate} />
       </div>
 
       {/* Content Sections with snap behavior */}
-      <section id="about" className="snap-section min-h-screen bg-white py-20 flex items-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h2 className="text-6xl font-acumin font-bold text-black mb-8">ABOUT</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Welcome to my digital playground where creativity meets technology. 
-              I'm a passionate developer and designer who believes in pushing 
-              the boundaries of what's possible on the web.
-            </p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
-            >
-              <div className="p-6">
-                <h3 className="text-2xl font-acumin font-semibold mb-4">Design</h3>
-                <p className="text-gray-600">Creating visually stunning and user-centered experiences</p>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-acumin font-semibold mb-4">Development</h3>
-                <p className="text-gray-600">Building robust and scalable web applications</p>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-acumin font-semibold mb-4">Innovation</h3>
-                <p className="text-gray-600">Exploring new technologies and creative solutions</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section id="projects" className="snap-section min-h-screen bg-gray-50 py-20 flex items-center">
+      <section id="projects" className="min-h-screen bg-gray-50 py-20 flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -171,7 +88,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section id="games" className="snap-section min-h-screen bg-white py-20 flex items-center">
+      <section id="games" className="min-h-screen bg-white py-20 flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -207,7 +124,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section id="tools" className="snap-section min-h-screen bg-gray-50 py-20 flex items-center">
+      <section id="tools" className="min-h-screen bg-gray-50 py-20 flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -243,7 +160,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section id="contacts" className="snap-section min-h-screen bg-black text-white py-20 flex items-center">
+      <section id="contacts" className="min-h-screen bg-black text-white py-20 flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

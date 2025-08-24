@@ -1,15 +1,20 @@
-# Ritish Neupane - Cyberpunk Portfolio Website
+# Ritish Neupane - Portfolio Website
 
-A visually striking, interactive portfolio website featuring a cyberpunk/glitch aesthetic with animated fragments and a glassmorphism background.
+A modern, interactive portfolio website built with React, TypeScript, and Tailwind CSS, featuring smooth animations and a clean sky blue design.
+
+## 🌟 Live Website
+
+**🌐 Main Site**: [ritish.com.np](https://ritish.com.np)  
+**📱 GitHub Pages**: [username.github.io/portfolio](https://username.github.io/portfolio)
 
 ## 🎨 Design Features
 
-- **Cyberpunk Aesthetic**: Dark themes with neon accents and glitch effects
-- **Animated Fragments**: Floating SVG fragments that create dynamic visual interest
-- **Glassmorphism Background**: Animated gradient background with glass-like transparency effects
-- **Glitch Text Effects**: Advanced CSS animations for the main title
-- **Page Snapping**: Smooth section transitions with scroll-snap functionality
+- **Sky Blue Theme**: Clean, professional aesthetic with calming colors
+- **Animated Elements**: Floating bubbles and smooth transitions
+- **Interactive Background**: Mouse-tracking animations
+- **Smooth Scrolling**: Natural page navigation without forced snapping
 - **Responsive Design**: Optimized for all screen sizes
+- **Personal Content**: Detailed about section with real photos and descriptions
 
 ## 🛠️ Tech Stack
 

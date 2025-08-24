@@ -1,0 +1,26 @@
+in the about  you are to make the ui look like this -
+Write About on the top.  and then below i will have certain cards and images that shows what i do . each card will be a square and a circle will be on the left or right side of the card. make the cards format easily replicable so i can add any if i want to later.
+i want the cards to have a rectangle text area and a  circle with image at the end.  
+. 
+
+About Me {use about image 1}
+I’m a builder, fixer, and problem-solver who thrives at the intersection of curiosity, creativity, and adaptability.
+From dismantling engines to coding AI systems, from designing solutions to leading community projects, I chase ideas until I understand them—and then I bring them to life.
+Whether I’m working with wires, words, or people, I adapt fast, learn deeply, and make things happen.
+
+Card 1: 
+3 Words to describe me : Curious Creative Adaptable
+images 1,2,3 named (About_Curious, About_Creative,About_Adaptable) 
+
+in the curious section put this text Curious- 
+i have discovered myself being Curious. i cant help myself when it comes to diving into the depts of any mechanism around me . from learining how computers work on a hardware level and randomly learning how complex systems work. i try to discover and learn when i am struck with curiosity . being this openly curious has not only helped me in Computer science but in general life too. i am a lowkey mechanic , "jerry rigger" , plumber, electirician ,inventor musician and a lot of other things at the same time. if anything is interesting enough to be learnt . i will have already have a good idea of the basis of how everything works. i also like systems like engines and compressors and fridges and literally anything.
+
+Creative:
+i am a creative doer and not just a curious thinker . if i want a laptop stand i go to the hardware shop and buy screw's to make it myself. i have built obstacle detection cars, licence plate detection and speed detection systems from a raspberry pi , crossbows, laptop stands, electronic parts, extended routers, and i basically fix everything around the house from the doorbells to taps , gysers , solar light, flush and everything you can do in the house. "if i have the tools to do it , you bet i already did it " . my room is filled with wires and spare parts. i even fix my own motorcycle when it comes to it and when it gets to fixing mechanical parts i know exactly what's wrong . i am not just a computer science graduate i am a creative builder and the definition of "jerry rig".  i have a habit of building systems . i unscrew things and stick my head into anything i find interesting .
+
+Adaptable:
+i can learn really fast and adapt really quickly. the idea of a computer science student generally falls under the shy and introverted . but i put myself in positions where i have to adapt and be social or learn the systems around me. i am currently leading the governmental level youth club called Budanilakantha Youth Club and i am active in social initiatives and i dont back down when it comes to public speaking and putting myself out there. i was initially a very shy individual but over the years i have been in countless committees and have conducted and hosted multiple programs . from MUNs ,Youth initiatives , public speaking  or handling internships whilst studying . i write my own somgs and i am also an esteemed designer. i do a lot and have a lot of social experience whilst also being niche and talented. 
+
+
+
+ 

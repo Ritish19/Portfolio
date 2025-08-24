@@ -23,15 +23,9 @@
     min-height: 100vh;
   }
   
-  /* Page snapping styles */
-  .snap-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-  
-  /* Smooth scrolling container */
+  /* Smooth scrolling - no snapping */
   html {
-    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
   }
   
   /* Custom scrollbar styles */
@@ -70,7 +64,7 @@
     @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
   }
 
-  /* Enhanced Cyberpunk/Glitch specific styles */
+  /* Enhanced Cyberpunk/Clean title styles */
   .hero-title {
     font-family: 'Acumin Variable Concept', 'Inter', sans-serif;
     font-weight: 900;
@@ -78,38 +72,49 @@
     line-height: 0.9;
     letter-spacing: -0.02em;
     color: #000;
-    text-shadow: 0 0 20px rgba(0,255,255,0.3);
+    text-shadow: 0 0 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
   }
   
-  .glitch-text {
+  .hero-title:hover {
+    text-shadow: 0 0 40px rgba(0,255,255,0.2);
+    transform: scale(1.02);
+  }
+  
+  .clean-text {
     position: relative;
     color: #000;
     font-family: 'Acumin Variable Concept', 'Inter', sans-serif;
-    animation: glitch-main 2s infinite;
+  }
+
+  /* Custom logo styles */
+  .custom-logo {
+    transition: all 0.3s ease;
   }
   
-  .glitch-text::before,
-  .glitch-text::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.8;
-    pointer-events: none;
+  .custom-logo:hover {
+    transform: scale(1.05);
   }
   
-  .glitch-text::before {
-    animation: glitch-1 0.8s infinite;
-    color: #ff0040;
-    z-index: -1;
-    text-shadow: 2px 0 #ff0040;
+  .logo-circle {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    box-shadow: 
+      0 10px 30px rgba(0,0,0,0.3),
+      inset 0 1px 0 rgba(255,255,255,0.1);
   }
   
-  .glitch-text::after {
-    animation: glitch-2 0.8s infinite;
-    color: #00ffff;
-    z-index: -2;
-    text-shadow: -2px 0 #00ffff;
+  .logo-inner {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    box-shadow: 
+      0 2px 10px rgba(0,0,0,0.2),
+      inset 0 1px 0 rgba(255,255,255,0.8);
+  }
+  
+  .logo-text {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
   }
   
   .fragment-red {
@@ -154,44 +159,5 @@
   
   .hero-nav-item.active::before {
     opacity: 1;
-  }
-
-  @keyframes glitch-main {
-    0%, 100% { transform: translate(0); }
-    10% { transform: translate(-1px, 1px) skew(0.5deg); }
-    20% { transform: translate(1px, 0px) skew(-0.2deg); }
-    30% { transform: translate(0px, -1px) skew(0.3deg); }
-    40% { transform: translate(-1px, 0px) skew(-0.1deg); }
-    50% { transform: translate(1px, 1px) skew(0.4deg); }
-    60% { transform: translate(0px, 0px) skew(0deg); }
-    70% { transform: translate(-1px, -1px) skew(-0.3deg); }
-    80% { transform: translate(1px, -1px) skew(0.2deg); }
-    90% { transform: translate(0px, 1px) skew(-0.4deg); }
-  }
-
-  @keyframes glitch-1 {
-    0%, 100% { transform: translate(0); clip-path: inset(0 0 0 0); }
-    10% { transform: translate(-3px, 2px); clip-path: inset(10px 0 80px 0); }
-    20% { transform: translate(-2px, -2px); clip-path: inset(20px 0 60px 0); }
-    30% { transform: translate(2px, 2px); clip-path: inset(40px 0 40px 0); }
-    40% { transform: translate(-2px, 0px); clip-path: inset(60px 0 20px 0); }
-    50% { transform: translate(3px, -1px); clip-path: inset(80px 0 10px 0); }
-    60% { transform: translate(0px, 2px); clip-path: inset(0 0 0 0); }
-    70% { transform: translate(-3px, -2px); clip-path: inset(15px 0 75px 0); }
-    80% { transform: translate(2px, -2px); clip-path: inset(25px 0 65px 0); }
-    90% { transform: translate(0px, 1px); clip-path: inset(35px 0 55px 0); }
-  }
-  
-  @keyframes glitch-2 {
-    0%, 100% { transform: translate(0); clip-path: inset(0 0 0 0); }
-    10% { transform: translate(2px, 2px); clip-path: inset(0 0 90px 0); }
-    20% { transform: translate(2px, -2px); clip-path: inset(5px 0 85px 0); }
-    30% { transform: translate(-2px, 2px); clip-path: inset(15px 0 75px 0); }
-    40% { transform: translate(2px, 0px); clip-path: inset(25px 0 65px 0); }
-    50% { transform: translate(-2px, -1px); clip-path: inset(35px 0 55px 0); }
-    60% { transform: translate(0px, 2px); clip-path: inset(45px 0 45px 0); }
-    70% { transform: translate(3px, -1px); clip-path: inset(55px 0 35px 0); }
-    80% { transform: translate(-2px, -2px); clip-path: inset(65px 0 25px 0); }
-    90% { transform: translate(0px, 1px); clip-path: inset(75px 0 15px 0); }
   }
 }

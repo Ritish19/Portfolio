@@ -59,9 +59,11 @@ export const AnimatedNavigation: React.FC<AnimatedNavigationProps> = ({ classNam
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex items-center"
             >
-              <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-                <div className="w-6 h-6 bg-white rounded-full opacity-90"></div>
-              </div>
+              <img 
+                src="/src/assets/images/LOGO.svg" 
+                alt="Ritish Neupane Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <span className="ml-3 font-acumin font-bold text-xl text-black">
                 RITISH NEUPANE
               </span>
