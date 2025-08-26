@@ -164,33 +164,33 @@ const FragmentScene: React.FC<{ mouseX: any; mouseY: any }> = ({ mouseX, mouseY 
   const bubbles = [
     // Top area bubbles
     { x: 25, y: 15, imageSrc: '/Bubble1.svg', scale: 1.2, rotation: 15, delay: 0.2 },
-    { x: 45, y: 12, imageSrc: '/Bubble.svg', scale: 0.9, rotation: -30, delay: 0.5 },
-    { x: 75, y: 18, imageSrc: '/Bubble.svg', scale: 1.0, rotation: 45, delay: 0.8 },
+    { x: 45, y: 12, imageSrc: '/Bubble2.svg', scale: 0.9, rotation: -30, delay: 0.5 },
+    { x: 75, y: 18, imageSrc: '/Bubble3.svg', scale: 1.0, rotation: 45, delay: 0.8 },
     
     // Right side bubbles (around main logo area)
-    { x: 85, y: 35, imageSrc: '/Bubble.svg', scale: 1.4, rotation: -15, delay: 1.0 },
-    { x: 78, y: 55, imageSrc: '/Bubble.svg', scale: 1.1, rotation: 60, delay: 1.3 },
-    { x: 82, y: 70, imageSrc: '/Bubble.svg', scale: 1.3, rotation: -45, delay: 1.6 },
+    { x: 85, y: 35, imageSrc: '/Bubble4.svg', scale: 1.4, rotation: -15, delay: 1.0 },
+    { x: 78, y: 55, imageSrc: '/Bubble1.svg', scale: 1.1, rotation: 60, delay: 1.3 },
+    { x: 82, y: 70, imageSrc: '/Bubble2.svg', scale: 1.3, rotation: -45, delay: 1.6 },
     
     // Bottom right bubbles
-    { x: 65, y: 85, imageSrc: '/Bubble.svg', scale: 0.8, rotation: 90, delay: 1.9 },
-    { x: 45, y: 88, imageSrc: '/Bubble.svg', scale: 1.0, rotation: -60, delay: 2.2 },
+    { x: 65, y: 85, imageSrc: '/Bubble3.svg', scale: 0.8, rotation: 90, delay: 1.9 },
+    { x: 45, y: 88, imageSrc: '/Bubble4.svg', scale: 1.0, rotation: -60, delay: 2.2 },
     
     // Left side scattered bubbles
-    { x: 15, y: 30, imageSrc: '/Bubble.svg', scale: 0.7, rotation: 120, delay: 2.5 },
-    { x: 8, y: 60, imageSrc: '/Bubble.svg', scale: 0.9, rotation: -90, delay: 2.8 },
-    { x: 20, y: 75, imageSrc: '/Bubble.svg', scale: 0.6, rotation: 30, delay: 3.1 },
+    { x: 15, y: 30, imageSrc: '/Bubble1.svg', scale: 0.7, rotation: 120, delay: 2.5 },
+    { x: 8, y: 60, imageSrc: '/Bubble2.svg', scale: 0.9, rotation: -90, delay: 2.8 },
+    { x: 20, y: 75, imageSrc: '/Bubble3.svg', scale: 0.6, rotation: 30, delay: 3.1 },
     
     // Additional scattered bubbles for density
-    { x: 35, y: 25, imageSrc: '/Bubble.svg', scale: 0.5, rotation: 75, delay: 3.4 },
-    { x: 55, y: 40, imageSrc: '/Bubble.svg', scale: 0.7, rotation: -105, delay: 3.7 },
-    { x: 70, y: 25, imageSrc: '/Bubble.svg', scale: 0.8, rotation: 135, delay: 4.0 },
+    { x: 35, y: 25, imageSrc: '/Bubble4.svg', scale: 0.5, rotation: 75, delay: 3.4 },
+    { x: 55, y: 40, imageSrc: '/Bubble1.svg', scale: 0.7, rotation: -105, delay: 3.7 },
+    { x: 70, y: 25, imageSrc: '/Bubble2.svg', scale: 0.8, rotation: 135, delay: 4.0 },
     
     // Additional floating bubbles for more dynamic effect
-    { x: 30, y: 60, imageSrc: '/Bubble.svg', scale: 0.4, rotation: 200, delay: 4.3 },
-    { x: 60, y: 65, imageSrc: '/Bubble.svg', scale: 0.6, rotation: -150, delay: 4.6 },
-    { x: 90, y: 50, imageSrc: '/Bubble.svg', scale: 0.5, rotation: 300, delay: 4.9 },
-    { x: 12, y: 45, imageSrc: '/Bubble.svg', scale: 0.8, rotation: -200, delay: 5.2 },
+    { x: 30, y: 60, imageSrc: '/Bubble3.svg', scale: 0.4, rotation: 200, delay: 4.3 },
+    { x: 60, y: 65, imageSrc: '/Bubble4.svg', scale: 0.6, rotation: -150, delay: 4.6 },
+    { x: 90, y: 50, imageSrc: '/Bubble1.svg', scale: 0.5, rotation: 300, delay: 4.9 },
+    { x: 12, y: 45, imageSrc: '/Bubble2.svg', scale: 0.8, rotation: -200, delay: 5.2 },
   ];
 
   return (
