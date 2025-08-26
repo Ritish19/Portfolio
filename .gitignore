@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Development and planning files (keep private)
+Prompts/
+docs/About me.txt
+PROJECT_PLAN.md
+TECHNICAL_SPECS.md
+run-dev.bat
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
