@@ -5,7 +5,7 @@ A modern, interactive portfolio website built with React, TypeScript, and Tailwi
 ## 🌟 Live Website
 
 **🌐 Main Site**: [ritish.com.np](https://ritish.com.np)  
-**📱 GitHub Pages**: [username.github.io/portfolio](https://username.github.io/portfolio)
+**📱 GitHub Pages**: [ritish19.github.io/Portfolio](https://ritish19.github.io/Portfolio)
 
 ## 🎨 Design Features
 
