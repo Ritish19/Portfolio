@@ -141,9 +141,8 @@ This project is private and proprietary.
 ## 👨‍💻 Author
 
 **Ritish Neupane**
-- Portfolio: [Your Portfolio URL]
-- Email: [Your Email]
-- LinkedIn: [Your LinkedIn]
+- Portfolio: [ritish.com.np](https://ritish.com.np)
+- GitHub: [@Ritish19](https://github.com/Ritish19)
 
 ---
 
