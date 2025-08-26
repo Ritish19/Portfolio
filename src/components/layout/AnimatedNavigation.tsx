@@ -60,7 +60,7 @@ export const AnimatedNavigation: React.FC<AnimatedNavigationProps> = ({ classNam
               className="flex items-center"
             >
               <img 
-                src="/src/assets/images/LOGO.svg" 
+                src="/LOGO.svg" 
                 alt="Ritish Neupane Logo" 
                 className="w-10 h-10 object-contain"
               />

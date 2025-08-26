@@ -163,34 +163,34 @@ const FragmentScene: React.FC<{ mouseX: any; mouseY: any }> = ({ mouseX, mouseY 
   // Position bubbles throughout the scene with varying sizes and behaviors
   const bubbles = [
     // Top area bubbles
-    { x: 25, y: 15, imageSrc: '/src/assets/images/fragments/Bubble1.svg', scale: 1.2, rotation: 15, delay: 0.2 },
-    { x: 45, y: 12, imageSrc: '/src/assets/images/fragments/Bubble2.svg', scale: 0.9, rotation: -30, delay: 0.5 },
-    { x: 75, y: 18, imageSrc: '/src/assets/images/fragments/Bubble3.svg', scale: 1.0, rotation: 45, delay: 0.8 },
+    { x: 25, y: 15, imageSrc: '/Bubble1.svg', scale: 1.2, rotation: 15, delay: 0.2 },
+    { x: 45, y: 12, imageSrc: '/Bubble.svg', scale: 0.9, rotation: -30, delay: 0.5 },
+    { x: 75, y: 18, imageSrc: '/Bubble.svg', scale: 1.0, rotation: 45, delay: 0.8 },
     
     // Right side bubbles (around main logo area)
-    { x: 85, y: 35, imageSrc: '/src/assets/images/fragments/Bubble4.svg', scale: 1.4, rotation: -15, delay: 1.0 },
-    { x: 78, y: 55, imageSrc: '/src/assets/images/fragments/Bubble1.svg', scale: 1.1, rotation: 60, delay: 1.3 },
-    { x: 82, y: 70, imageSrc: '/src/assets/images/fragments/Bubble2.svg', scale: 1.3, rotation: -45, delay: 1.6 },
+    { x: 85, y: 35, imageSrc: '/Bubble.svg', scale: 1.4, rotation: -15, delay: 1.0 },
+    { x: 78, y: 55, imageSrc: '/Bubble.svg', scale: 1.1, rotation: 60, delay: 1.3 },
+    { x: 82, y: 70, imageSrc: '/Bubble.svg', scale: 1.3, rotation: -45, delay: 1.6 },
     
     // Bottom right bubbles
-    { x: 65, y: 85, imageSrc: '/src/assets/images/fragments/Bubble3.svg', scale: 0.8, rotation: 90, delay: 1.9 },
-    { x: 45, y: 88, imageSrc: '/src/assets/images/fragments/Bubble4.svg', scale: 1.0, rotation: -60, delay: 2.2 },
+    { x: 65, y: 85, imageSrc: '/Bubble.svg', scale: 0.8, rotation: 90, delay: 1.9 },
+    { x: 45, y: 88, imageSrc: '/Bubble.svg', scale: 1.0, rotation: -60, delay: 2.2 },
     
     // Left side scattered bubbles
-    { x: 15, y: 30, imageSrc: '/src/assets/images/fragments/Bubble1.svg', scale: 0.7, rotation: 120, delay: 2.5 },
-    { x: 8, y: 60, imageSrc: '/src/assets/images/fragments/Bubble2.svg', scale: 0.9, rotation: -90, delay: 2.8 },
-    { x: 20, y: 75, imageSrc: '/src/assets/images/fragments/Bubble3.svg', scale: 0.6, rotation: 30, delay: 3.1 },
+    { x: 15, y: 30, imageSrc: '/Bubble.svg', scale: 0.7, rotation: 120, delay: 2.5 },
+    { x: 8, y: 60, imageSrc: '/Bubble.svg', scale: 0.9, rotation: -90, delay: 2.8 },
+    { x: 20, y: 75, imageSrc: '/Bubble.svg', scale: 0.6, rotation: 30, delay: 3.1 },
     
     // Additional scattered bubbles for density
-    { x: 35, y: 25, imageSrc: '/src/assets/images/fragments/Bubble4.svg', scale: 0.5, rotation: 75, delay: 3.4 },
-    { x: 55, y: 40, imageSrc: '/src/assets/images/fragments/Bubble1.svg', scale: 0.7, rotation: -105, delay: 3.7 },
-    { x: 70, y: 25, imageSrc: '/src/assets/images/fragments/Bubble2.svg', scale: 0.8, rotation: 135, delay: 4.0 },
+    { x: 35, y: 25, imageSrc: '/Bubble.svg', scale: 0.5, rotation: 75, delay: 3.4 },
+    { x: 55, y: 40, imageSrc: '/Bubble.svg', scale: 0.7, rotation: -105, delay: 3.7 },
+    { x: 70, y: 25, imageSrc: '/Bubble.svg', scale: 0.8, rotation: 135, delay: 4.0 },
     
     // Additional floating bubbles for more dynamic effect
-    { x: 30, y: 60, imageSrc: '/src/assets/images/fragments/Bubble3.svg', scale: 0.4, rotation: 200, delay: 4.3 },
-    { x: 60, y: 65, imageSrc: '/src/assets/images/fragments/Bubble4.svg', scale: 0.6, rotation: -150, delay: 4.6 },
-    { x: 90, y: 50, imageSrc: '/src/assets/images/fragments/Bubble1.svg', scale: 0.5, rotation: 300, delay: 4.9 },
-    { x: 12, y: 45, imageSrc: '/src/assets/images/fragments/Bubble2.svg', scale: 0.8, rotation: -200, delay: 5.2 },
+    { x: 30, y: 60, imageSrc: '/Bubble.svg', scale: 0.4, rotation: 200, delay: 4.3 },
+    { x: 60, y: 65, imageSrc: '/Bubble.svg', scale: 0.6, rotation: -150, delay: 4.6 },
+    { x: 90, y: 50, imageSrc: '/Bubble.svg', scale: 0.5, rotation: 300, delay: 4.9 },
+    { x: 12, y: 45, imageSrc: '/Bubble.svg', scale: 0.8, rotation: -200, delay: 5.2 },
   ];
 
   return (
@@ -320,7 +320,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         animate={{ opacity: [0.15, 0.25, 0.15] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         style={{
-          backgroundImage: `url('/src/assets/images/dots.svg')`,
+          backgroundImage: `url('/dots.svg')`,
           backgroundRepeat: 'repeat',
           backgroundSize: '80px 80px',
           mixBlendMode: 'multiply'
@@ -341,7 +341,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           className="relative"
         >
           <motion.img 
-            src="/src/assets/images/HomeImg.svg" 
+            src="/HomeImg.svg" 
             alt="Ritish Neupane Home Image" 
             className="w-96 h-96 object-contain drop-shadow-lg"
             whileHover={{ scale: 1.05, rotate: 5 }}
