@@ -215,9 +215,10 @@ const FragmentScene: React.FC<{ mouseX: any; mouseY: any }> = ({ mouseX, mouseY 
 
 interface HeroSectionProps {
   onNavigate: (section: string) => void;
+  currentSection?: string;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, currentSection = 'home' }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -261,12 +262,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
   const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.9]);
 
   const navItems = [
-    { id: 'home', label: 'HOME', active: true },
-    { id: 'about', label: 'ABOUT', active: false },
-    { id: 'projects', label: 'Projects', active: false },
-    { id: 'games', label: 'Games', active: false },
-    { id: 'tools', label: 'Tools', active: false },
-    { id: 'contacts', label: 'Contacts', active: false },
+    { id: 'home', label: 'HOME', active: currentSection === 'home' },
+    { id: 'about', label: 'ABOUT', active: currentSection === 'about' },
+    { id: 'projects', label: 'Projects', active: currentSection === 'projects' },
+    { id: 'games', label: 'Games', active: currentSection === 'games' },
+    { id: 'tools', label: 'Tools', active: currentSection === 'tools' },
+    { id: 'contacts', label: 'Contacts', active: currentSection === 'contacts' },
   ];
 
   return (
@@ -332,8 +333,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         <FragmentScene mouseX={mouseXSpring} mouseY={mouseYSpring} />
       </div>
 
-      {/* Home Image positioned correctly based on mockup */}
-      <div className="absolute right-[5%] md:right-[15%] top-[60%] md:top-[55%] transform -translate-y-1/2 z-20">
+      {/* Home Image positioned correctly based on mockup - hidden on mobile */}
+      <div className="hidden md:block absolute right-[5%] md:right-[15%] top-[60%] md:top-[55%] transform -translate-y-1/2 z-20">
         <motion.div
           initial={{ scale: 0, rotate: -180, opacity: 0 }}
           animate={{ scale: 1, rotate: 0, opacity: 1 }}
@@ -378,7 +379,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         {/* Navigation on the Left */}
         <div className="flex-1 flex items-center justify-center md:justify-start">
           <motion.nav 
-            className="pl-4 md:pl-16 space-y-4 md:space-y-6 text-center md:text-left"
+            className="pl-4 md:pl-16 space-y-2 md:space-y-6 text-center md:text-left"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
@@ -470,21 +471,35 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           className="max-w-7xl mx-auto mb-16 md:mb-28 px-4 md:px-0"
         >
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="flex-shrink-0"
-            >
-              <div className="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 md:border-6 border-white/70">
-                <img
-                  src="/about-assets/about image 1.jpg"
-                  alt="About Me"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
+            {/* Image and Title Container - Stacked on mobile */}
+            <div className="flex flex-col items-center md:items-start md:flex-shrink-0">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="mb-4 md:mb-0"
+              >
+                <div className="w-48 h-48 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 md:border-6 border-white/70">
+                  <img
+                    src="/about-assets/about image 1.jpg"
+                    alt="About Me"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
+              
+              {/* Title - appears under image on mobile, hidden on desktop (will be in text card) */}
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="block md:hidden text-3xl font-bold text-sky-900 mb-6 text-center"
+              >
+                About Me
+              </motion.h2>
+            </div>
             
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -493,7 +508,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
               viewport={{ once: true }}
               className="flex-1 bg-white/95 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-14 shadow-2xl border-2 border-white/40"
             >
-              <h2 className="text-4xl md:text-6xl font-bold text-sky-900 mb-6 md:mb-10">About Me</h2>
+              {/* Title - hidden on mobile, shown on desktop */}
+              <h2 className="hidden md:block text-4xl md:text-6xl font-bold text-sky-900 mb-6 md:mb-10">About Me</h2>
               <p className="text-gray-800 leading-relaxed text-lg md:text-2xl font-medium">
                 I'm a builder, fixer, and problem-solver who thrives at the intersection of curiosity, creativity, and adaptability.
                 From dismantling engines to coding AI systems, from designing solutions to leading community projects, I chase ideas until I understand them—and then I bring them to life.

@@ -50,7 +50,7 @@ export const HomePage: React.FC = () => {
       
       {/* Hero Section */}
       <div id="home" className="relative">
-        <HeroSection onNavigate={handleNavigate} />
+        <HeroSection onNavigate={handleNavigate} currentSection={currentSection} />
       </div>
 
       {/* Content Sections with snap behavior */}
