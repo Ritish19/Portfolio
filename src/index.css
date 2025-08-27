@@ -160,4 +160,32 @@
   .hero-nav-item.active::before {
     opacity: 1;
   }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: clamp(2.5rem, 10vw, 4rem);
+      line-height: 1.1;
+    }
+    
+    .hero-nav-item {
+      font-size: 1.25rem;
+      padding: 0.75rem 0;
+    }
+
+    /* Adjust bubble animations for mobile */
+    .fragment-overlay {
+      transform: scale(0.7);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: clamp(2rem, 12vw, 3rem);
+    }
+    
+    .hero-nav-item {
+      font-size: 1.1rem;
+    }
+  }
 }
